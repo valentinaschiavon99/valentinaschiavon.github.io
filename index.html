@@ -53,12 +53,13 @@
         }
         .skills-list span {
             padding: 5px 10px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             border-radius: 5px;
         }
         .skills-list span:hover {
-            background-color: #a566ff;
+            background-color: #fff;
             color: #000;
+            box-shadow: 0 0 10px #fff;
             cursor: default;
         }
         .flashing-text {
@@ -97,6 +98,12 @@
             font-weight: bold;
             box-shadow: 0 0 10px #a566ff99;
         }
+        .visitor-badge {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #a566ff;
+            text-shadow: 0 0 5px #a566ff;
+        }
     </style>
 </head>
 <body>
@@ -117,10 +124,10 @@
     <div class="skills-list">
         <span>Java</span>
         <span>Python</span>
+        <span>Kotlin</span>
         <span>JavaScript</span>
         <span>TypeScript</span>
         <span>HTML</span>
-        <span>Kotlin</span>
         <span>React</span>
         <span>SQL</span>
         <span>NestJS</span>
@@ -150,6 +157,10 @@
 <section class="quote">
     <div id="quote-rotator">"There are no accidents." – Master Oogway, Kung Fu Panda</div>
 </section>
+
+<div class="visitor-badge">
+    👁️‍🗨️ <strong>Visitors</strong>: [LED-style badge here soon]
+</div>
 
 <footer>
     &copy; 2025 Valentina Schiavon. All rights reserved.
@@ -182,7 +193,6 @@
 </script>
 </body>
 </html>
-
 
 
 
