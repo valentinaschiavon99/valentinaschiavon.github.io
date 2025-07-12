@@ -43,48 +43,23 @@
         .skills {
             padding: 40px 20px;
         }
-        .skills-grid-wrapper {
-            overflow-x: auto;
-            white-space: nowrap;
-            padding-bottom: 10px;
-            scroll-snap-type: x mandatory;
-        }
-        .skills-grid {
-            display: inline-flex;
-            gap: 20px;
-            padding: 20px;
-        }
-        .skill {
-            min-width: 180px;
-            height: 100px;
+        .skills-list {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
-            padding: 20px;
-            border: 1px solid #a566ff;
-            border-radius: 10px;
-            color: #a566ff;
+            gap: 15px;
             font-weight: bold;
-            box-shadow: 0 0 12px #a566ff44;
-            transition: transform 0.2s;
-            position: relative;
-            scroll-snap-align: start;
+            font-size: 1.1rem;
         }
-        .skill:hover {
-            transform: scale(1.05);
+        .skills-list span {
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
         }
-        .skill:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: -28px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #222;
-            color: #fff;
-            font-size: 0.75rem;
-            padding: 5px 8px;
-            border-radius: 4px;
-            white-space: nowrap;
+        .skills-list span:hover {
+            background-color: #a566ff;
+            color: #000;
+            cursor: default;
         }
         .flashing-text {
             color: #a566ff;
@@ -133,29 +108,28 @@
         <a href="mailto:valentinaschiavon99@gmail.com">Email</a>
         <a href="https://github.com/valentinaschiavon99" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/valentinaschiavon1/" target="_blank">LinkedIn</a>
+        <a href="https://www.xing.com/profile/Valentina_Schiavon097794/web_profiles" target="_blank">Xing</a>
     </div>
 </header>
 
 <section class="skills">
     <h2 class="flashing-text">Tech Stack & Skills</h2>
-    <div class="skills-grid-wrapper">
-        <div class="skills-grid">
-            <div class="skill" data-tooltip="Java backend and OOP development">Java</div>
-            <div class="skill" data-tooltip="Data science & scripting">Python</div>
-            <div class="skill" data-tooltip="Android, Spring Boot">Kotlin</div>
-            <div class="skill" data-tooltip="Frontend component-based UI">React</div>
-            <div class="skill" data-tooltip="Relational DB queries">SQL</div>
-            <div class="skill" data-tooltip="Full-stack framework">NestJS</div>
-            <div class="skill" data-tooltip="NoSQL experience">MongoDB</div>
-            <div class="skill" data-tooltip="JS backend & APIs">Node.js</div>
-            <div class="skill" data-tooltip="Frontend architecture">Angular</div>
-            <div class="skill" data-tooltip="API documentation & testing">Swagger API</div>
-            <div class="skill" data-tooltip="Identifying cyber risks">Threat Modeling</div>
-            <div class="skill" data-tooltip="National security contexts">Critical Infrastructure Protection</div>
-            <div class="skill" data-tooltip="Cyber risk chain mapping">Risk Propagation</div>
-            <div class="skill" data-tooltip="InfoSec principles & practices">Cybersecurity</div>
-            <div class="skill" data-tooltip="Optimizing prompts for LLMs">LLM Prompt Engineering</div>
-        </div>
+    <div class="skills-list">
+        <span>Java</span>
+        <span>Python</span>
+        <span>Kotlin</span>
+        <span>React</span>
+        <span>SQL</span>
+        <span>NestJS</span>
+        <span>MongoDB</span>
+        <span>Node.js</span>
+        <span>Angular</span>
+        <span>Swagger API</span>
+        <span>Threat Modeling</span>
+        <span>Critical Infrastructure Protection</span>
+        <span>Risk Propagation</span>
+        <span>Cybersecurity</span>
+        <span>LLM Prompt Engineering</span>
     </div>
 </section>
 
@@ -181,11 +155,11 @@
 <a href="mailto:valentinaschiavon99@gmail.com" class="floating-btn">Contact Me</a>
 
 <script>
-    ScrollReveal().reveal('.skills-grid .skill', { interval: 100, origin: 'bottom', distance: '30px' });
+    ScrollReveal().reveal('.skills-list span', { interval: 100, origin: 'bottom', distance: '30px' });
     ScrollReveal().reveal('.languages, .quote', { delay: 200, distance: '20px', origin: 'bottom' });
 
     const quotes = [
-        '"There are no accidents."',
+        '"There are no accidents." – Master Oogway, Kung Fu Panda',
         '"Quit, don\'t quit... Noodles, don\'t noodles..." – Master Oogway, Kung Fu Panda',
         '"Success is a decision. So is inaction." – Anonymous'
     ];
