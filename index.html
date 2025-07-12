@@ -15,6 +15,7 @@
             background-color: #000;
             color: #fff;
             text-align: center;
+            scroll-behavior: smooth;
         }
         header {
             padding: 40px 20px;
@@ -27,6 +28,7 @@
         h1 {
             font-size: 2.5rem;
             margin: 0;
+            cursor: pointer;
         }
         p {
             font-size: 1rem;
@@ -45,6 +47,7 @@
             overflow-x: auto;
             white-space: nowrap;
             padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
         }
         .skills-grid {
             display: inline-flex;
@@ -64,9 +67,24 @@
             font-weight: bold;
             box-shadow: 0 0 12px #a566ff44;
             transition: transform 0.2s;
+            position: relative;
+            scroll-snap-align: start;
         }
         .skill:hover {
             transform: scale(1.05);
+        }
+        .skill:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #222;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 5px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
         }
         .flashing-text {
             color: #a566ff;
@@ -85,18 +103,31 @@
             font-size: 1.2rem;
             font-style: italic;
             color: #a566ff;
+            min-height: 30px;
         }
         footer {
             padding: 20px;
             font-size: 0.9rem;
             color: #666;
         }
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #a566ff;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px #a566ff99;
+        }
     </style>
 </head>
 <body>
 <header>
     <img src="profile.jpg" alt="Valentina Schiavon" class="profile-pic">
-    <h1>Valentina Schiavon</h1>
+    <h1 id="easter-egg">Valentina Schiavon</h1>
     <p>Business Informatics Student working at AIT (Austrian Institute of Technology), where I contribute to applied research on cyber risk and develop Web Risk Analysis tools to support disaster prevention strategies | Passionate about AI, Cybersecurity & Prompt Engineering</p>
     <div class="social-links">
         <a href="mailto:valentinaschiavon99@gmail.com">Email</a>
@@ -109,21 +140,21 @@
     <h2 class="flashing-text">Tech Stack & Skills</h2>
     <div class="skills-grid-wrapper">
         <div class="skills-grid">
-            <div class="skill">Java</div>
-            <div class="skill">Python</div>
-            <div class="skill">Kotlin</div>
-            <div class="skill">React</div>
-            <div class="skill">SQL</div>
-            <div class="skill">NestJS</div>
-            <div class="skill">MongoDB</div>
-            <div class="skill">Node.js</div>
-            <div class="skill">Angular</div>
-            <div class="skill">Swagger API</div>
-            <div class="skill">Threat Modeling</div>
-            <div class="skill">Critical Infrastructure Protection</div>
-            <div class="skill">Risk Propagation</div>
-            <div class="skill">Cybersecurity</div>
-            <div class="skill">LLM Prompt Engineering</div>
+            <div class="skill" data-tooltip="Java backend and OOP development">Java</div>
+            <div class="skill" data-tooltip="Data science & scripting">Python</div>
+            <div class="skill" data-tooltip="Android, Spring Boot">Kotlin</div>
+            <div class="skill" data-tooltip="Frontend component-based UI">React</div>
+            <div class="skill" data-tooltip="Relational DB queries">SQL</div>
+            <div class="skill" data-tooltip="Full-stack framework">NestJS</div>
+            <div class="skill" data-tooltip="NoSQL experience">MongoDB</div>
+            <div class="skill" data-tooltip="JS backend & APIs">Node.js</div>
+            <div class="skill" data-tooltip="Frontend architecture">Angular</div>
+            <div class="skill" data-tooltip="API documentation & testing">Swagger API</div>
+            <div class="skill" data-tooltip="Identifying cyber risks">Threat Modeling</div>
+            <div class="skill" data-tooltip="National security contexts">Critical Infrastructure Protection</div>
+            <div class="skill" data-tooltip="Cyber risk chain mapping">Risk Propagation</div>
+            <div class="skill" data-tooltip="InfoSec principles & practices">Cybersecurity</div>
+            <div class="skill" data-tooltip="Optimizing prompts for LLMs">LLM Prompt Engineering</div>
         </div>
     </div>
 </section>
@@ -140,14 +171,41 @@
 </section>
 
 <section class="quote">
-    <div class="typewriter">"There are no accidents." – Master Oogway, Kung Fu Panda</div>
+    <div id="quote-rotator">"There are no accidents." – Master Oogway, Kung Fu Panda</div>
 </section>
 
 <footer>
     &copy; 2025 Valentina Schiavon. All rights reserved.
 </footer>
+
+<a href="mailto:valentinaschiavon99@gmail.com" class="floating-btn">Contact Me</a>
+
+<script>
+    ScrollReveal().reveal('.skills-grid .skill', { interval: 100, origin: 'bottom', distance: '30px' });
+    ScrollReveal().reveal('.languages, .quote', { delay: 200, distance: '20px', origin: 'bottom' });
+
+    const quotes = [
+        '"There are no accidents."',
+        '"Quit, don\'t quit... Noodles, don\'t noodles..." – Master Oogway, Kung Fu Panda',
+        '"Success is a decision. So is inaction." – Anonymous'
+    ];
+    let index = 0;
+    setInterval(() => {
+        index = (index + 1) % quotes.length;
+        document.getElementById('quote-rotator').innerText = quotes[index];
+    }, 8000);
+
+    let clickCount = 0;
+    document.getElementById('easter-egg').addEventListener('click', () => {
+        clickCount++;
+        if (clickCount === 5) {
+            alert("You're looking for a cybersecurity expert? You just found her. 😎");
+        }
+    });
+</script>
 </body>
 </html>
+
 
 
 
