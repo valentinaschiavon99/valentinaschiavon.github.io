@@ -1,1 +1,384 @@
+3<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentina Schiavon | Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Portfolio of Valentina Schiavon – Wirtschaftsinformatik student passionate about AI and Cybersecurity.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0f0f0f;
+            color: #00ffcc;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            max-width: 600px;
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid #00ffcc;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #00ffcc;
+            border: 2px solid #00ffcc;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #00ffcc;
+            color: #0f0f0f;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .projects {
+            background-color: #1a1a1a;
+        }
+
+        .projects h2, .contact h2 {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #00ffcc;
+            text-shadow: 0 0 5px #00ffcc;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-item {
+            background: #111;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #00ffcc55;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: #888;
+            background-color: #0a0a0a;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #00ffcc;
+            color: #0f0f0f;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #00ccaa;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+        .flashing-text {
+            animation: flash 1.5s infinite alternate;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        @keyframes flash {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+        .skills {
+            background: #121212;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .skills-grid div {
+            background: #1f1f1f;
+            padding: 1rem;
+            border: 1px solid #00ffcc55;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #00ffcc;
+            text-shadow: 0 0 5px #00ffcc88;
+        }
+
+        .languages {
+            background: #0f0f0f;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .quote {
+            background: #0f0f0f;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .languages {
+            background: linear-gradient(135deg, #0f0f0f 0%, #111111 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: background 0.5s ease;
+        }
+
+        .languages:hover {
+            background: linear-gradient(135deg, #111111 0%, #0f0f0f 100%);
+        }
+
+        .flags {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .flags span {
+            cursor: default;
+            transition: transform 0.3s, text-shadow 0.3s;
+        }
+
+        .flags span:hover {
+            transform: scale(1.2);
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        #cyberCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: #000;
+            opacity: 0.07;
+        }
+
+        h1:hover {
+            animation: glitch 0.3s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); text-shadow: 0 0 5px #00ffcc; }
+            20% { transform: translate(-1px, 1px); text-shadow: -2px 2px #ff00c8; }
+            40% { transform: translate(1px, -1px); text-shadow: 2px -2px #00ffff; }
+            60% { transform: translate(0.5px, 0.5px); text-shadow: 1px 1px #ffffff; }
+            80% { transform: translate(-0.5px, -0.5px); text-shadow: -1px -1px #ff00ff; }
+            100% { transform: translate(0); text-shadow: 0 0 5px #00ffcc; }
+        }
+    </style>
+    <style>
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #00ffcc;
+            white-space: nowrap;
+            margin: 1rem auto;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            font-size: 1.4rem;
+            color: #00ffcc;
+            max-width: 600px;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ffcc; }
+        }
+
+        .email-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: transparent;
+            border: 2px solid #00ffcc;
+            color: #00ffcc;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .email-button:hover {
+            background-color: #00ffcc;
+            color: #0f0f0f;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+    </style>
+    <canvas id="cyberCanvas"></canvas>
+</head>
+<body>
+<header>
+    <img src="profile.jpg" alt="Profile picture" class="profile-pic">
+    <h1>Valentina Schiavon</h1>
+    <p>I'm Valentina, a passionate Wirtschaftsinformatik student with a love for Artificial Intelligence, Cybersecurity, and digital innovation. With a multicultural background and a drive for impact, I'm building tools that bridge people, knowledge, and technology. I'm currently working at the Austrian Institute of Technology (AIT), where I contribute to research in Cybersecurity and Risk Management for critical digital infrastructures, developing a web-based analysis tool to support strategic decision-making and disaster prevention.</p>
+    <div class="social-links">
+        <a href="https://github.com/your_username" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/your_username" target="_blank">LinkedIn</a>
+        <a href="https://www.xing.com/profile/your_username" target="_blank">Xing</a>
+    </div>
+    <div class="typewriter">Cybersecurity. Innovation. Resilience.</div>
+    <a href="mailto:valentina@email.com" class="email-button">Write me an email</a>
+
+</header>
+
+
+
+
+
+<footer>
+    &copy; 2025 – Valentina Schiavon. All rights reserved.
+
+</footer>
+
+<section class="skills">
+    <h2 class="flashing-text">Tech Stack & Skills</h2>
+    <div class="skills-grid">
+        <div>Java</div>
+        <div>Python</div>
+        <div>Kotlin</div>
+        <div>React</div>
+        <div>SQL</div>
+        <div>NestJS</div>
+        <div>MongoDB</div>
+        <div>Node.js</div>
+        <div>Angular</div>
+        <div>Swagger API</div>
+        <div>Threat Modeling</div>
+        <div>Critical Infrastructure Protection</div>
+        <div>Risk Propagation</div>
+        <div>Cybersecurity</div>
+        <div>LLM Prompt Engineering</div>
+    </div>
+    <div>Python</div>
+    <div>Kotlin</div>
+    <div>React</div>
+    <div>SQL</div>
+    <div>Git</div>
+    <div>Cybersecurity</div>
+    <div>LLM Prompt Engineering</div>
+    </div>
+</section>
+
+<section class="languages">
+    <h2 class="flashing-text">🌐 I speak your language</h2>
+    <div class="flags">
+        <span title="Italian">🇮🇹</span>
+        <span title="Hungarian">🇭🇺</span>
+        <span title="English">🇬🇧</span>
+        <span title="German">🇩🇪</span>
+        <span title="Spanish">🇪🇸</span>
+    </div>
+</section>
+
+<section class="quote">
+    <p class="flashing-text" style="font-size: 1.2rem; margin-top: 2rem;">
+        “The quieter you become, the more you can hear.” – Ram Dass
+    </p>
+</section>
+
+
+
+<script>
+    ScrollReveal().reveal('header', { delay: 300, origin: 'top', distance: '40px' });
+    ScrollReveal().reveal('.projects h2', { delay: 200, origin: 'left', distance: '40px' });
+    ScrollReveal().reveal('.project-item', { interval: 200, origin: 'bottom', distance: '20px' });
+
+</script>
+<script>
+    const canvas = document.getElementById('cyberCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function drawGrid() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = '#00ffcc33';
+        ctx.lineWidth = 0.5;
+        for (let x = 0; x < canvas.width; x += 40) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, canvas.height);
+            ctx.stroke();
+        }
+        for (let y = 0; y < canvas.height; y += 40) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(canvas.width, y);
+            ctx.stroke();
+        }
+        requestAnimationFrame(drawGrid);
+    }
+    drawGrid();
+</script>
+</body>
+</html>
 <!-- Full HTML content already present in canvas -->
