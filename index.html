@@ -41,15 +41,18 @@
         .skills {
             padding: 40px 20px;
         }
+        .skills-grid-wrapper {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 10px;
+        }
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            display: inline-flex;
             gap: 20px;
-            justify-items: center;
-            margin-top: 30px;
+            padding: 20px;
         }
         .skill {
-            width: 180px;
+            min-width: 180px;
             height: 100px;
             display: flex;
             align-items: center;
@@ -104,22 +107,24 @@
 
 <section class="skills">
     <h2 class="flashing-text">Tech Stack & Skills</h2>
-    <div class="skills-grid">
-        <div class="skill">Java</div>
-        <div class="skill">Python</div>
-        <div class="skill">Kotlin</div>
-        <div class="skill">React</div>
-        <div class="skill">SQL</div>
-        <div class="skill">NestJS</div>
-        <div class="skill">MongoDB</div>
-        <div class="skill">Node.js</div>
-        <div class="skill">Angular</div>
-        <div class="skill">Swagger API</div>
-        <div class="skill">Threat Modeling</div>
-        <div class="skill">Critical Infrastructure Protection</div>
-        <div class="skill">Risk Propagation</div>
-        <div class="skill">Cybersecurity</div>
-        <div class="skill">LLM Prompt Engineering</div>
+    <div class="skills-grid-wrapper">
+        <div class="skills-grid">
+            <div class="skill">Java</div>
+            <div class="skill">Python</div>
+            <div class="skill">Kotlin</div>
+            <div class="skill">React</div>
+            <div class="skill">SQL</div>
+            <div class="skill">NestJS</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">Angular</div>
+            <div class="skill">Swagger API</div>
+            <div class="skill">Threat Modeling</div>
+            <div class="skill">Critical Infrastructure Protection</div>
+            <div class="skill">Risk Propagation</div>
+            <div class="skill">Cybersecurity</div>
+            <div class="skill">LLM Prompt Engineering</div>
+        </div>
     </div>
 </section>
 
