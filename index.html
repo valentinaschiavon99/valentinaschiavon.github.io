@@ -9,8 +9,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
     <style>
-        /* CSS invariato sopra */
-        /* ... */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            padding: 40px 20px;
+        }
+        .profile-pic {
+            width: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        p {
+            font-size: 1rem;
+            margin: 10px 0 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #a566ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .skills {
+            padding: 40px 20px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-top: 30px;
+        }
+        .skill {
+            padding: 20px;
+            border: 1px solid #a566ff;
+            border-radius: 10px;
+            color: #a566ff;
+            font-weight: bold;
+            box-shadow: 0 0 12px #a566ff44;
+            transition: transform 0.2s;
+        }
+        .skill:hover {
+            transform: scale(1.05);
+        }
+        .flashing-text {
+            color: #a566ff;
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px #a566ff;
+        }
+        .languages {
+            padding: 30px 20px;
+        }
+        .flags span {
+            font-size: 2rem;
+            margin: 0 6px;
+        }
+        .quote {
+            padding: 40px 20px;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #a566ff;
+        }
+        .email-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #a566ff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            box-shadow: 0 0 10px #a566ff;
+        }
+        footer {
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -20,8 +103,8 @@
     <p>Business Informatics Student | Passionate about AI, Cybersecurity & Prompt Engineering</p>
     <div class="social-links">
         <a href="mailto:valentinaschiavon99@gmail.com">Email</a>
-        <a href="https://github.com/valentinaschiavon" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/valentinaschiavon" target="_blank">LinkedIn</a>
+        <a href="https://github.com/valentinaschiavon99" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/valentinaschiavon1/" target="_blank">LinkedIn</a>
     </div>
 </header>
 
@@ -58,7 +141,7 @@
 </section>
 
 <section class="quote">
-    <div class="typewriter">"I turn caffeine, code and chaos into clean digital products."</div>
+    <div class="typewriter">"There are no accidents." – Master Oogway, Kung Fu Panda</div>
     <a href="mailto:valentinaschiavon99@gmail.com" class="email-button">Contact Me</a>
 </section>
 
@@ -68,4 +151,3 @@
 </body>
 </html>
 
-text-shadow: 0 0 10px #00ffcc;
